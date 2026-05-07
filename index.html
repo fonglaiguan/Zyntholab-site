@@ -4,6 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZynthoLab — Science Made Possible</title>
+
+  <!-- ═══ SEO ═══ -->
+  <meta name="description" content="ZynthoLab offers practical tools, templates, and science communication services for researchers and science students. Built at the bench. Designed for today.">
+  <meta name="keywords" content="science communication, research tools, lab templates, science writing, workflow tools, biomedical, scientists, science students, ZynthoLab">
+  <meta name="author" content="ZynthoLab">
+  <link rel="canonical" href="https://zyntholab.com/">
+
+  <!-- ═══ OPEN GRAPH (LinkedIn, Facebook, WhatsApp) ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyntholab.com/">
+  <meta property="og:title" content="ZynthoLab — Science Made Possible">
+  <meta property="og:description" content="Practical resources, tools, and workflows built for scientists who want to work smarter and communicate their research with clarity.">
+  <meta property="og:image" content="https://zyntholab.com/og-image.png">
+  <meta property="og:site_name" content="ZynthoLab">
+  <meta property="og:locale" content="en_SG">
+
+  <!-- ═══ TWITTER / X CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZynthoLab — Science Made Possible">
+  <meta name="twitter:description" content="Practical resources, tools, and workflows built for scientists who want to work smarter and communicate their research with clarity.">
+  <meta name="twitter:image" content="https://zyntholab.com/og-image.png">
+
+  <!-- ═══ FAVICON (SVG inline) ═══ -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231A2640'/><text x='4' y='24' font-family='Georgia,serif' font-size='22' font-style='italic' fill='%232E5FA3'>Z</text></svg>">
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://assets.mlcdn.com/fonts.css?version=1777295" rel="stylesheet">
 
@@ -452,6 +477,19 @@
     input:focus, select:focus, textarea:focus { border-color: var(--blue); }
     textarea { resize: vertical; min-height: 130px; }
 
+    /* ── SEO visually-hidden H1 ── */
+    .sr-h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .form-note {
       font-size: 0.75rem;
       color: var(--muted);
@@ -483,6 +521,18 @@
       color: rgba(244,243,239,0.35);
     }
 
+    .footer-policy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(244,243,239,0.4);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    .footer-policy:hover { color: rgba(244,243,239,0.75); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
@@ -493,8 +543,69 @@
       footer { padding: 1.8rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
     }
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.3rem;
+      background: none;
+      border: none;
+      z-index: 200;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     @media (max-width: 600px) {
-      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background: var(--linen);
+        padding: 5rem 2rem 2rem;
+        gap: 2rem;
+        box-shadow: -4px 0 20px rgba(26,38,64,0.12);
+        transition: right 0.3s ease;
+        z-index: 150;
+      }
+
+      .nav-links.open { right: 0; }
+
+      .nav-links a {
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(26,38,64,0.35);
+        z-index: 140;
+      }
+
+      .nav-overlay.open { display: block; }
+
       .hero-cta { flex-direction: column; }
       .form-row { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.8rem; text-align: center; }
@@ -741,16 +852,23 @@
     <div class="nav-wordmark">Zynth<span class="o">o</span>Lab</div>
     <div class="nav-tagline">Science Made Possible.</div>
   </div>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <!-- ═══════════ HERO ═══════════ -->
 <section id="hero">
+  <h1 class="sr-h1">ZynthoLab — Science Made Possible. Practical tools, templates, and science communication services for researchers and science students.</h1>
   <div class="hero-logo-wrap">
     <svg class="hero-logo-svg" xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 520 120" role="img" aria-label="ZynthoLab — Science Made Possible">
@@ -823,7 +941,7 @@
       </p>
       <div class="shop-cta">
         <!-- Replace YOUR_GUMROAD_URL with your Gumroad shop link -->
-        <a href="https://gumroad.com/zyntholab" class="btn btn-primary" target="_blank" rel="noopener">Browse our products</a>
+        <a href="https://zyntholab.gumroad.com/" class="btn btn-primary" target="_blank" rel="noopener">Browse our products</a>
         <a href="#contact" class="btn btn-outline">Send a custom request</a>
       </div>
     </div>
@@ -923,7 +1041,7 @@
             </div>
             <div class="ml-form-embedPermissions">
               <div class="ml-form-embedPermissionsContent default privacy-policy">
-                <p>You can unsubscribe anytime. For more details, review our Privacy Policy.</p>
+                <p>You can unsubscribe anytime. For more details, review our <a href="/privacy-policy.html" style="color:rgba(244,243,239,0.6);text-underline-offset:2px;">Privacy Policy</a>.</p>
               </div>
             </div>
             <input type="hidden" name="ml-submit" value="1">
@@ -1014,6 +1132,7 @@
 <footer>
   <div class="footer-wordmark">Zynth<span class="o">o</span>Lab</div>
   <div class="footer-copy">© 2026 ZynthoLab. All rights reserved.</div>
+  <a href="/privacy-policy.html" class="footer-policy">Privacy Policy</a>
 </footer>
 
 <!-- ═══════════ MAILERLITE SCRIPTS ═══════════ -->
@@ -1027,6 +1146,41 @@
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
 <script>
   fetch("https://assets.mailerlite.com/jsonp/2243543/forms/185545903862450157/takel");
+</script>
+
+<!-- ═══════════ MOBILE NAV ═══════════ -->
+<script>
+  (function () {
+    var toggle   = document.getElementById('navToggle');
+    var links    = document.getElementById('navLinks');
+    var overlay  = document.getElementById('navOverlay');
+
+    function openMenu() {
+      toggle.classList.add('open');
+      links.classList.add('open');
+      overlay.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+      overlay.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function () {
+      links.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+  })();
 </script>
 
 </body>

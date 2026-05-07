@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ZynthoLab</title>
+
+  <meta name="description" content="ZynthoLab's Privacy Policy. Learn how we collect, use, and protect your personal data in accordance with GDPR and Singapore's PDPA.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://zyntholab.com/privacy-policy">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231A2640'/><text x='4' y='24' font-family='Georgia,serif' font-size='22' font-style='italic' fill='%232E5FA3'>Z</text></svg>">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1A2640;
+      --blue:       #2E5FA3;
+      --linen:      #F4F3EF;
+      --linen-dark: #ECEAE3;
+      --white:      #FFFFFF;
+      --muted:      #5A6577;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--linen);
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--linen);
+      border-bottom: 1px solid rgba(26,38,64,0.1);
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand { display: flex; flex-direction: column; gap: 0.1rem; text-decoration: none; }
+
+    .nav-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .nav-wordmark .o { color: var(--blue); font-style: italic; }
+
+    .nav-tagline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.22em;
+      color: var(--blue);
+      text-transform: uppercase;
+    }
+
+    .nav-back {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--blue); }
+
+    /* ── PAGE ── */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem 7rem;
+    }
+
+    .label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.9rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .effective-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(26,38,64,0.1);
+      margin: 2.5rem 0;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      margin-top: 2.5rem;
+    }
+
+    h2:first-of-type { margin-top: 0; }
+
+    p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.1rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0.5rem 0 1.1rem 1.4rem;
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.9;
+    }
+
+    ul li { margin-bottom: 0.3rem; }
+
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover { opacity: 0.75; }
+
+    .highlight-box {
+      background: var(--white);
+      border-left: 3px solid var(--blue);
+      padding: 1.4rem 1.8rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .highlight-box p {
+      font-size: 0.93rem;
+      margin-bottom: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--linen);
+    }
+
+    .footer-wordmark .o { color: var(--blue); font-style: italic; }
+
+    .footer-copy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: rgba(244,243,239,0.35);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.5rem; }
+      .page-wrap { padding: 3rem 1.5rem 5rem; }
+      footer { padding: 1.8rem 1.5rem; flex-direction: column; gap: 0.8rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-wordmark">Zynth<span class="o">o</span>Lab</div>
+    <div class="nav-tagline">Science Made Possible.</div>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<!-- ═══════════ CONTENT ═══════════ -->
+<div class="page-wrap">
+
+  <div class="label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="effective-date">Effective date: 7 May 2026 &nbsp;|&nbsp; Last updated: 7 May 2026</p>
+
+  <div class="highlight-box">
+    <p>This policy explains what personal data ZynthoLab collects, why we collect it, and how we handle it. We keep it short and plain. If you have questions, email us at <a href="mailto:fonglaiguan@gmail.com">fonglaiguan@gmail.com</a>.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>1. Who we are</h2>
+  <p>ZynthoLab is a science communication and digital products business operated by Fong Lai Guan (Zoey Fong), based in Singapore. References to "ZynthoLab", "we", "us", or "our" in this policy refer to this business.</p>
+  <p>For data protection purposes, ZynthoLab is the data controller for personal information collected through this website.</p>
+
+  <h2>2. What data we collect and why</h2>
+
+  <p>We collect personal data only when you actively provide it to us. We do not buy, rent, or broker personal data.</p>
+
+  <p><strong>a) Newsletter sign-up (MailerLite)</strong></p>
+  <p>When you subscribe to our mailing list, we collect your email address. This is processed by MailerLite, our email marketing provider. We use this to send you occasional updates about new tools, resources, and science communication content. You can unsubscribe at any time using the link in every email.</p>
+  <ul>
+    <li>Data collected: email address</li>
+    <li>Legal basis (GDPR): consent</li>
+    <li>Third party: <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" rel="noopener">MailerLite Privacy Policy</a></li>
+  </ul>
+
+  <p><strong>b) Contact form (Formspree)</strong></p>
+  <p>When you submit the contact form on our website, we collect your name, email address, enquiry type, and message. This is processed by Formspree and delivered to our inbox. We use this information solely to respond to your enquiry.</p>
+  <ul>
+    <li>Data collected: name, email address, message</li>
+    <li>Legal basis (GDPR): legitimate interests (responding to your request)</li>
+    <li>Third party: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree Privacy Policy</a></li>
+  </ul>
+
+  <p><strong>c) Website analytics</strong></p>
+  <p>We may use basic analytics tools to understand how visitors use our site (e.g. page views, referral sources). If analytics are enabled, no personally identifiable information is collected at the individual level. This policy will be updated if a specific analytics provider is added.</p>
+
+  <h2>3. Cookies</h2>
+  <p>This website does not set first-party cookies. Third-party services embedded on the site (MailerLite) may set their own cookies when you interact with their forms. You can manage or block cookies through your browser settings.</p>
+
+  <h2>4. How we store and protect your data</h2>
+  <p>We do not store your personal data on our own servers. Data submitted through forms is held by our third-party processors (MailerLite, Formspree) under their own security practices and data processing agreements. We access this data only through their secure platforms.</p>
+  <p>We retain contact form submissions for as long as needed to respond to your enquiry, and no longer than 2 years unless there is an ongoing business relationship. You may request deletion at any time.</p>
+
+  <h2>5. Who we share your data with</h2>
+  <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Data is shared only with the service providers listed above (MailerLite, Formspree) to the extent necessary to operate this website. Both providers are contractually required to handle data in compliance with applicable law.</p>
+
+  <h2>6. International data transfers</h2>
+  <p>ZynthoLab is based in Singapore. Our service providers (MailerLite, Formspree) may process data in the European Union or the United States. Where data is transferred outside Singapore or the EEA, our providers maintain appropriate safeguards such as Standard Contractual Clauses (SCCs) or equivalent mechanisms.</p>
+
+  <h2>7. Your rights</h2>
+  <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+  <ul>
+    <li><strong>Access</strong> — request a copy of the data we hold about you</li>
+    <li><strong>Correction</strong> — ask us to correct inaccurate data</li>
+    <li><strong>Deletion</strong> — ask us to delete your data ("right to be forgotten")</li>
+    <li><strong>Withdrawal of consent</strong> — unsubscribe from our mailing list at any time</li>
+    <li><strong>Data portability</strong> — request your data in a structured, machine-readable format</li>
+    <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
+  </ul>
+  <p>To exercise any of these rights, email us at <a href="mailto:fonglaiguan@gmail.com">fonglaiguan@gmail.com</a>. We will respond within 30 days.</p>
+
+  <p>If you are based in the European Union, you also have the right to lodge a complaint with your local data protection authority. If you are based in Singapore, you may contact the <a href="https://www.pdpc.gov.sg" target="_blank" rel="noopener">Personal Data Protection Commission (PDPC)</a>.</p>
+
+  <h2>8. Singapore PDPA compliance</h2>
+  <p>ZynthoLab complies with Singapore's Personal Data Protection Act 2012 (PDPA). We collect personal data only for lawful purposes, notify individuals before or at the time of collection, and do not use or disclose data beyond those purposes without consent. You may contact us to access or correct your personal data at any time.</p>
+
+  <h2>9. Children's privacy</h2>
+  <p>This website is not directed at children under the age of 13. We do not knowingly collect personal data from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+
+  <h2>10. Links to other websites</h2>
+  <p>Our website may contain links to external sites (e.g. Gumroad, Etsy). We are not responsible for the privacy practices of those sites. We encourage you to read their privacy policies before providing any personal data.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the website after changes are posted constitutes acceptance of the updated policy.</p>
+
+  <h2>12. Contact us</h2>
+  <p>If you have any questions about this Privacy Policy or how we handle your data, please get in touch:</p>
+  <div class="highlight-box">
+    <p><strong>ZynthoLab</strong><br>
+    Operated by Fong Lai Guan (Zoey Fong)<br>
+    Singapore<br>
+    Email: <a href="mailto:fonglaiguan@gmail.com">fonglaiguan@gmail.com</a></p>
+  </div>
+
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-wordmark">Zynth<span class="o">o</span>Lab</div>
+  <div class="footer-copy">© 2026 ZynthoLab. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
