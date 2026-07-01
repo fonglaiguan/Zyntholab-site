@@ -238,6 +238,12 @@
 
     .shop-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
 
+    .shop-card--featured { background: var(--linen); border-left-color: var(--navy); }
+    .shop-card-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: var(--white); background: var(--blue); padding: 0.15rem 0.55rem; border-radius: 2px; margin-bottom: 0.5rem; text-transform: uppercase; }
+    .shop-card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; gap: 0.8rem; flex-wrap: wrap; }
+    .shop-card-price { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); font-weight: 600; }
+    .btn-sm { padding: 0.45rem 1.1rem; font-size: 0.75rem; }
+
     /* ── SERVICES ── */
     #services { background: var(--navy); padding: 7rem 3rem; }
 
@@ -947,20 +953,22 @@
     </div>
 
     <div class="shop-cards">
-      <div class="shop-card">
-        <h4>For Scientists</h4>
-        <p>Research writing aids, lab workflow templates, and science communication guides
-           built around real academic needs.</p>
+      <div class="shop-card shop-card--featured">
+        <span class="shop-card-badge">Now Available</span>
+        <h4>Lab Inventory Hub</h4>
+        <p>A complete Notion system for tracking chemicals, equipment, stock levels, and expiry dates in one place. Built for research labs, biotech teams, and PhD researchers.</p>
+        <div class="shop-card-meta">
+          <span class="shop-card-price">SGD 47</span>
+          <a href="https://zyntholab.gumroad.com/l/LabInventoryHubNotion" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Get it now</a>
+        </div>
       </div>
       <div class="shop-card">
         <h4>For Science Students</h4>
-        <p>Structured tools for thesis writing, literature reviews, and presenting your
-           work clearly to any audience.</p>
+        <p>Thesis writing tools, literature review templates, and guides for presenting your work clearly. More products coming soon.</p>
       </div>
       <div class="shop-card">
         <h4>Can't find what you need?</h4>
-        <p>Send us a custom request and we'll build something tailored to your workflow
-           or organisation.</p>
+        <p>Send us a custom request and we'll build something tailored to your workflow or organisation.</p>
       </div>
     </div>
   </div>
